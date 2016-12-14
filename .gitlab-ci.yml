@@ -1,0 +1,8 @@
+deploy:
+  image: ruby:2.3
+  type: deploy
+  script:
+  - git push https://$GITHUB_TOKEN@github.com/nbolt/nxt.git $CI_BUILD_REF:$CI_BUILD_REF_NAME
+  only:
+  - master
+  - develop
